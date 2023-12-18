@@ -28,5 +28,5 @@ message ProductID {
 ```
 
 ## Implementation
-- [Go](./ch02/productinfo/go/README.md)
-- [C++](./ch02/productinfo/cpp/README.md)
+- [Go](./productinfo/go/README.md)
+- [C++](./productinfo/cpp/README.md)
