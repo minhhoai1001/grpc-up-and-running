@@ -41,5 +41,3 @@ message CombinedShipment {
 
 - [Go](./order-service/go/README.md)
 - [C++](./order-service/cpp/README.md)
-
-
