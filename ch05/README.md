@@ -13,6 +13,12 @@ calls they intercept. For unary RPC you can use `unary interceptors`, while for
 streaming RPC you can use `streaming interceptors`. These interceptors can be
 used on the gRPC server side or on the gRPC client side.
 
-### Server-Side Interceptors
-- **Unary Interceptors**: These interceptors are executed for unary RPCs on the server side.
-- **Stream Interceptors**: These interceptors are executed for client-streaming and server-streaming RPCs on the server side.
+## Deadlines
+Deadlines and timeouts are two commonly used patterns in distributed
+computing. Deadlines can be used for specifying an exact point in time by which an operation must complete, while timeouts specify a maximum duration for which the client or server is willing to wait. 
+- `Timeouts` allow you to specify how long a client application can wait
+for an RPC to complete before it terminates with an error. A timeout is usually
+specified as a duration and locally applied at each client side.
+- A `deadline` is expressed in absolute time from the beginning of a request (even if
+the API presents them as a duration offset) and applied across multiple service
+invocations. The application that initiates the request sets the deadline and theentire request chain needs to respond by the deadline.
