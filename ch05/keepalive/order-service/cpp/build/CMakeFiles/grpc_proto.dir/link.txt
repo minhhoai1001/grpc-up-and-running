@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgrpc_proto.a CMakeFiles/grpc_proto.dir/ecommerce/order_management.pb.cc.o CMakeFiles/grpc_proto.dir/ecommerce/order_management.grpc.pb.cc.o
+/usr/bin/ranlib libgrpc_proto.a

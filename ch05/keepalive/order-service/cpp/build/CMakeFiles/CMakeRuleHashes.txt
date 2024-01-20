@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+d6a13690b64625c249c42ec553f4f766 ../ecommerce/order_management.pb.cc
