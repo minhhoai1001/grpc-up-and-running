@@ -85,3 +85,30 @@ they shouldn't be part of the RPC arguments. In such cases, you can use gRPC
 metadata that you can send or receive from either the gRPC service or the gRPC
 client.
 
+## Load Balancing
+Often when you develop production-ready gRPC applications, you need to make
+sure that your application can cater to high availability and scalability needs.
+Therefore, you always run more than one gRPC server in production. So,
+distributing RPC calls between these services needs to be taken care of by some
+entity. That’s where load balancing comes into play. Two main load-balancing
+mechanisms are commonly used in gRPC: a **load-balancer (LB) proxy** and
+**client-side load balancing**.
+
+### Load-Balancer Proxy
+The LB proxy distributes the RPC call to one of the available backend
+gRPC servers that implements the actual logic for serving the call. The LB proxy
+keeps track of load on each backend server and offers a different load-balancing
+algorithm for distributing the load among the backend services.
+
+In theory, you can select any load balancer that supports HTTP/2 as the LB
+proxy for your gRPC applications. However, it must have full HTTP/2 support.
+Thus it’s always a good idea to specifically choose load balancers that explicitly
+offer gRPC support. For instance, you can use load-balancing solutions such as
+Nginx, Envoy proxy, etc., as the LB proxy for your gRPC applications.
+
+### Client-Side Load Balancing
+In this method, the
+client is aware of multiple backend gRPC servers and chooses one to use for
+each RPC. The client
+directly connects to the gRPC server address obtained by the lookaside load
+balancer.
